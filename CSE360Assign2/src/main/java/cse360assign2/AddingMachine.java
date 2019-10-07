@@ -15,7 +15,7 @@ package cse360assign2;
  * can be cleared, with the total reset to 0.
  * 
  * @author Tate Douglas
- * @version 0.1
+ * @version 1.0
  * @see #AddingMachine()
  * @see #getTotal()
  * @see #add(int)
@@ -25,52 +25,57 @@ package cse360assign2;
 public class AddingMachine {
 
 	private int total;
+	private String history = "0";
 	
 	/**
 	 * Class constructor, creates an Adding Machine object that
 	 * contains an integer value equal to 0.
 	 */
 	public AddingMachine () {
-		total = 0;  // not needed - included for clarity
+		total = 0;  //not needed - included for clarity
 	}
 	
 	/**
 	 * Returns the calculated total number.
-	 * @return the integer value 0
+	 * @return the calculated total number.
 	 */
 	public int getTotal () {
-		return 0;
+		return total;
 	}
 	
 	/**
-	 * Adds number to the total value. (Currently unfinished)
+	 * Adds input to the total value, and updates history
 	 * @param value number to be added to the total value.
 	 */
 	public void add (int value) {
-		
+		total = total + value;
+		history = history + " + " + value;
 	}
 	
 	/**
-	 * Subtracts number from the total value. (Currently unfinished)
+	 * Subtracts input from the total value, and updates history.
 	 * @param value number to be subtracted from the total value.
 	 */
 	public void subtract (int value) {
-		
+		total = total - value;
+		history = history + " - " + value;
 	}
 	
 	/**
 	 * Shows history of calculations on the total value.
-	 * @return string that contains the history of calculations (empty)
+	 * @return history string that records performed calculations
+	 * @see #add(int)
+	 * @see #subtract(int)
 	 */
 	public String toString () {
-		return "";
+		return history;
 	}
 	
 	/**
 	 * Clears the history of calculations, and resets total value to 0.
-	 * (Currently unfinished)
 	 */
 	public void clear() {
-	
+		history = "0";
+		total = 0;
 	}
 }
